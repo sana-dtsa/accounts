@@ -28,7 +28,7 @@ if(! $conn ) {
 
 if(isset($_POST['save']))
 {
-  // $id=$_POST['id'];
+    //$id=$_POST['id'];
     $code = $_POST['Code'];
     $desc = $_POST['Desc'];		
     $year = $_POST['Year'];
@@ -50,29 +50,21 @@ if(isset($_POST['save']))
 
 
 
-
-
-
-
-
-
-
-
    
-   if(isset($_POST['save']))
-{
+   if(isset($_POST['save_budget'])){
   // $id=$_POST['id'];
-    $code = $_POST['Code'];
-    $desc = $_POST['Desc'];		
-    $year = $_POST['Year'];
-    $name = $_POST['Name'];
-    $schedulePassedBy = $_POST['SchedulePassedBy'];
+    $budget_year = $_POST['budget_year'];
+    $budget_amountinmillion = $_POST['budget_amountinmillion'];		
+    $budget_amountactual = $_POST['budget_amountactual'];
+    $project_id = $_POST['id'];
+    //$schedulePassedBy = $_POST['SchedulePassedBy'];
 
-     $sql = "INSERT INTO project VALUES ('max(id)','$code', '$desc', '$year', '$name', '$schedulePassedBy')";
+     $sql = "INSERT INTO budget VALUES ('max(budget_id)','$budget_year', '$budget_amountinmillion', '$budget_amountactual', '$project_id')";
     
      if (mysqli_query($conn, $sql)) {
-      echo "<script>alert('Project has been added successfully !')</script>";
-      echo "<script>window.location='./AddProject.php'</script>";
+      echo "<script>alert('budget has been added successfully !')</script>";
+      //echo "<script>alert('$budget_year')</script>";
+      echo "<script>window.location='./AddBudget.php'</script>";
       //header("Refresh: 0',  url=addProject.php");
         //echo "New record has been added successfully !";
      } else {

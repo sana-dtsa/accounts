@@ -217,6 +217,7 @@ include_once './HeadTable.php';
                                 </table>
                             </div>
                         </div>
+                        
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

@@ -5,6 +5,9 @@
         header('location:index.php');
     }
 ?>
+<?php
+include_once './HeadTable.php';
+?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -73,7 +76,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Add Project
                             </a>
-                            <a class="nav-link" href="AddBudget.php">
+                            <a class="nav-link" href="AddProject.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Add Budget
                             </a>
@@ -141,182 +144,83 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Add Budget</h1>
+                        <h2 class="mt-4">Headwise table information</h2>
                         <ol class="breadcrumb mb-4">
-                            <!--li class="breadcrumb-item active">Dashboard</li-->
+                            <li class="breadcrumb-item active"></li>
                         </ol>
-                        <div class="row">
-                        <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <!--div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Bar Chart Example
-                                    </div-->
-                                    <div class="card-body">
-                                        
-                                        <form class="form-horizontal" action="./InsertProject.php" method="post">
-                                    
-                                        <!-- <div class="form-group">
-                                          <label class="control-label col-sm-2" for="id">Project ID</label>
-                                          <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="id" placeholder="Enter code" name="id">
-                                          </div>
-                                        </div> -->
-
-
-
-                                        <div class="form-group">
-                                          <label class="control-label col-sm-2" for="budget_year">Budget Year</label>
-                                          <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="budget_year" placeholder="budget_year" name="budget_year">
-                                          </div>
-                                        </div>
-                                        <div class="form-group">
-                                          <label class="control-label col-sm-2" for="budget_amountinmillion">Budget Amount (million)</label>
-                                          <div class="col-sm-10">          
-                                            <input type="text" class="form-control" id="budget_amountinmillion" placeholder="budget_amountinmillion" name="budget_amountinmillion">
-                                          </div>
-                                        </div>
-                                        <div class="form-group">
-                                          <label class="control-label col-sm-2" for="budget_amountactual">Budget Amount (actual)</label>
-                                          <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="budget_amountactual" placeholder="budget_amountactual" name="budget_amountactual">
-                                          </div>
-                                        </div>
-                                        <div class="form-group">
-                                          <label class="control-label col-sm-2" for="Year">Select Project</label>
-                                          <div class="col-sm-10"> 
-                                            
-                                            <select id="id" name="id">
-                                              <option disabled selected>-- Select --</option>
-                                              <?php
-                                                  include "../conn.php";  // Using database connection file here
-                                                  $query = mysqli_query($conn, "SELECT * FROM `project`") or die(mysqli_error());
-                                                          //$fetch = mysqli_fetch_array($query);
-                                                  
-                                                  
-                                                  
-                                                  //$records = mysqli_query($link, "SELECT sub_info From tblmember");  // Use select query here 
-
-                                                  while($row = mysqli_fetch_array($query))
-                                                  {
-                                                      echo "<option value='". $row['id'] ."'>" .$row['Desc'] ."</option>";  // displaying data in option menu
-                                                  }	
-                                              ?>  
-                                            </select>
-                                          </div>
-                                        </div>
-
-                                        <br>
-                                        <div class="form-group">        
-                                          <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" style=" color:white;" name="save_budget" id="save_budget" class="btn btn-default bg-primary">Submit</button>
-                                          </div>
-                                        </div>
-                                      </form>
-</div>
-
+                        <!-- <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">No. of Projects</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#"></a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
-                        </div>
-                        <div class="row">
-
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <!--div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Bar Chart Example
-                                    </div-->
-
-<!---------------------------------------------------------------------------------------------------------------------------->
-    <!-- <div class="card-body">
-                                        
-    <form class="form-horizontal" action="./InsertProject.php" method="post">
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Code">Project Code</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="Code1" placeholder="Enter code" name="Code">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Desc">Project Description</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="Desc1" placeholder="ProjectDescription" name="Desc">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Name">Project Name</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="Name1" placeholder="Enter name" name="Name">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="Year">Project Year</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="Year1" placeholder="ProjectYear" name="Year">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-5" for="SchedulePassedBy">Schedule Passed by</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="SchedulePassedBy1" placeholder="SchedulePassedBy" name="SchedulePassedBy">
-      </div>
-    </div><br>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" style=" color:white;" name="save1" id="save"class="btn btn-default bg-primary">Submit</button>
-      </div>
-    </div>
-  </form>
-                                
-                                </div> -->
                                 </div>
+                            </div>                            
+                        </div> -->
+                        <div class="row">
+                            
+                        </div>
+                        <div class="card mb-4">
+                            <!-- <div class="card-header">
+                              DataTable Example
+                                   <i class="fas fa-table me-1"></i>
+                           </div> -->
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr. No</th>
+                                            <th>Object code</th>
+                                            <th>Object Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            if(is_array($fetchData)){      
+                                            $sn=1;
+                                            foreach($fetchData as $data){
+                                            ?>
+                                            <tr>
+                                            <td><?php echo $sn; ?></td>
+                                            <td><?php echo $data['Objectcode']??''; ?></td>
+                                            <td><?php echo $data['ObjectDescription']??''; ?></td>
+
+                                            </tr>
+                                        <?php
+                                            $sn++;}}else{ ?>
+                                        <tr>
+                                            <td colspan="3">
+                                        <?php echo $fetchData; ?>
+                                        </td>
+                                        <tr>
+                                        <?php
+                                        }?>
+                                        </tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                      
-                    </div>
+                        
+                    </div>                    
                 </main>
+                
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
+                        <div class="d-flex align-items-right justify-content-between small">
+                      
+                            <!-- <div>
+                           
+                                <a href="#">Created by ICT team</a>
                                 &middot;
                                 <a href="#">Terms &amp; Conditions</a>
+                            </div> -->
+                            <div class="text-muted">Created by ICT Team
+                            <img src="./assets/img/ictlogo.jpg" alt="img" style="max-width: 25px; max-height: 25px"></img>
                             </div>
                         </div>
                     </div>

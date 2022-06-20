@@ -73,9 +73,13 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Add Project
                             </a>
-                            <a class="nav-link" href="AddProject.php">
+                            <a class="nav-link" href="AddBudget.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Add Budget
+                            </a>
+                            <a class="nav-link" href="ShowProjects.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Show Projects
                             </a>
 
                             <!--div class="sb-sidenav-menu-heading">Interface</div>

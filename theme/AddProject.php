@@ -73,7 +73,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Add Project
                             </a>
-                            <a class="nav-link" href="AddProject.php">
+                            <a class="nav-link" href="AddBudget.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Add Budget
                             </a>
@@ -216,7 +216,7 @@
                                     </div-->
 
 <!---------------------------------------------------------------------------------------------------------------------------->
-    <div class="card-body">
+    <!-- <div class="card-body">
                                         
     <form class="form-horizontal" action="./InsertProject.php" method="post">
 
@@ -258,7 +258,7 @@
     </div>
   </form>
                                 
-                                </div>
+                                </div> -->
                                 </div>
                             </div>
                         </div>
