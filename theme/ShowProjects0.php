@@ -6,7 +6,7 @@
     }
 ?>
 <?php
-include_once './ProjectInformation.php';
+require('./HeadTablecopy.php');
 ?>
 <html lang="en">
     <head>
@@ -144,7 +144,7 @@ include_once './ProjectInformation.php';
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h2 class="mt-4">Project information</h2>
+                        <h2 class="mt-4">Headwise table information</h2>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active"></li>
                         </ol>
@@ -183,13 +183,13 @@ include_once './ProjectInformation.php';
                                     <thead>
                                         <tr>
                                             <th>Sr. No</th>
-                                            <!-- <th>ID</th> -->
-                                            <th>Code</th>
-                                            <th>Description</th>
-                                            <th>Year</th>
-                                            <th>Name</th>
-                                            <th>SchedulePassedBy</th>
-                                            <th>SchedulePassedBy</th>
+                                            <!-- <th>Object code</th> -->
+                                            <!-- <th>Object Description</th> -->
+                                            <th>Object Description</th>
+                                            <th>Object Description</th>
+                                            <th>Object Description</th>
+                                            <th>Object Description</th>
+
                                         </tr>
                                     </thead>
                                     
@@ -204,18 +204,18 @@ include_once './ProjectInformation.php';
                                         ?>
                                         <tr>
                                         <td><?php echo $sn; ?></td>
-                                       
-                                        <td><?php echo $data['Code']??''; ?></td>
-                                        <td><?php echo $data['Description']??''; ?></td>
+                                        <!-- <td><?php //echo $data['id']??''; ?></td> -->
+                                         <!-- <td><?php //echo $data['id']??''; ?></td> -->
+                                        <td><?php echo $data['Desc']??''; ?></td>
                                         <td><?php echo $data['Year']??''; ?></td>
                                         <td><?php echo $data['Name']??''; ?></td>
                                         <td><?php echo $data['SchedulePassedBy']??''; ?></td>
-                                        <td><?php echo $data['budget_year']??''; ?></td>
+
                                         </tr>
                                         <?php
                                         $sn++;}}else{ ?>
                                         <tr>
-                                            <td colspan="6">
+                                            <td colspan="5">
                                         <?php echo $fetchData; ?>
                                     </td>
                                         <tr>
